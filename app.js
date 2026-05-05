@@ -291,7 +291,6 @@ function populateProfile(user) {
   const username = user.username || "unknown";
   const email = user.email || "-";
   const role = user.role || "USER";
-  const loginType = (user.loginType || "EMAIL_PASSWORD").replace(/_/g, " ");
   const id = user._id || "-";
   const isVerified = !!user.isEmailVerified;
   const createdAt = user.createdAt ? formatDate(user.createdAt) : "-";
@@ -319,7 +318,6 @@ function populateProfile(user) {
   setText("detail-email", email);
   setText("detail-username", `@${username}`);
   setText("detail-role", role);
-  setText("detail-login-type", loginType);
   setText("detail-created", createdAt);
   setText("detail-updated", updatedAt);
   setText("detail-id", id);
