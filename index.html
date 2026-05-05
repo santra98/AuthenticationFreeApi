@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sakura</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="petals" aria-hidden="true">
+    <span class="petal p1"></span><span class="petal p2"></span>
+    <span class="petal p3"></span><span class="petal p4"></span>
+    <span class="petal p5"></span><span class="petal p6"></span>
+    <span class="petal p7"></span><span class="petal p8"></span>
+    <span class="petal p9"></span><span class="petal p10"></span>
+  </div>
+
+  <!-- Toast messages -->
+  <div id="toast" class="toast" role="alert" aria-live="polite">
+    <span id="toast-msg">Message</span>
+  </div>
+
+ 
+  <section id="screen-login" class="screen active">
+    <div class="auth-wrapper">
+      <div class="auth-card">
+
+      
+        <div class="auth-left">
+          <div class="auth-brand">
+            <span class="brand-name">sakura</span>
+          </div>
+
+          <div class="mascot-wrap">
+            <svg class="mascot-svg" viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="110" cy="205" rx="68" ry="18" fill="#f9a8d4" opacity="0.25"/>
+              <path d="M 72 178 Q 62 210 66 248 L 154 248 Q 158 210 148 178 Q 128 170 110 170 Q 92 170 72 178" fill="#fce7f3"/>
+              <path d="M 88 178 Q 110 186 132 178 L 129 195 Q 110 202 91 195 Z" fill="#fff" opacity="0.85"/>
+              <path d="M 101 186 Q 110 182 119 186 Q 110 191 101 186" fill="#f472b6"/>
+              <circle cx="110" cy="187" r="4" fill="#ec4899"/>
+              <path d="M 74 185 Q 53 200 57 228 Q 61 236 68 232 Q 66 212 80 196" fill="#fde8d0"/>
+              <path d="M 146 185 Q 167 200 163 228 Q 159 236 152 232 Q 154 212 140 196" fill="#fde8d0"/>
+              <circle cx="57" cy="232" r="8" fill="#fde8d0"/>
+              <circle cx="163" cy="232" r="8" fill="#fde8d0"/>
+              <g transform="translate(110,237)">
+                <polygon points="0,-11 3,-4 11,-4 5,1 7,9 0,5 -7,9 -5,1 -11,-4 -3,-4" fill="#fbbf24" opacity="0.9"/>
+                <polygon points="0,-7 2,-2 7,-2 3,1 5,6 0,3 -5,6 -3,1 -7,-2 -2,-2" fill="#fef08a"/>
+              </g>
+              <ellipse cx="110" cy="100" rx="58" ry="65" fill="#c084fc"/>
+              <ellipse cx="59" cy="132" rx="18" ry="42" fill="#c084fc" transform="rotate(-6 59 132)"/>
+              <ellipse cx="161" cy="132" rx="18" ry="42" fill="#c084fc" transform="rotate(6 161 132)"/>
+              <ellipse cx="55" cy="170" rx="12" ry="18" fill="#a855f7" transform="rotate(-10 55 170)"/>
+              <ellipse cx="165" cy="170" rx="12" ry="18" fill="#a855f7" transform="rotate(10 165 170)"/>
+              <ellipse cx="110" cy="112" rx="50" ry="55" fill="#fde8d0"/>
+              <ellipse cx="60" cy="118" rx="10" ry="13" fill="#fde8d0"/>
+              <ellipse cx="160" cy="118" rx="10" ry="13" fill="#fde8d0"/>
+              <ellipse cx="60" cy="118" rx="6" ry="9" fill="#f9c4a8"/>
+              <ellipse cx="160" cy="118" rx="6" ry="9" fill="#f9c4a8"/>
+              <path d="M 64 88 Q 70 60 110 55 Q 150 60 156 88 Q 138 76 110 78 Q 82 76 64 88" fill="#c084fc"/>
+              <path d="M 64 88 Q 58 108 62 128 Q 55 115 58 98 Z" fill="#d8b4fe"/>
+              <path d="M 156 88 Q 162 108 158 128 Q 165 115 162 98 Z" fill="#d8b4fe"/>
+              <ellipse cx="90" cy="70" rx="12" ry="6" fill="#f3e8ff" opacity="0.75" transform="rotate(-25 90 70)"/>
+              <ellipse cx="91" cy="110" rx="14" ry="17" fill="white"/>
+              <ellipse cx="129" cy="110" rx="14" ry="17" fill="white"/>
+              <ellipse cx="91" cy="113" rx="10" ry="13" fill="#7c3aed"/>
+              <ellipse cx="129" cy="113" rx="10" ry="13" fill="#7c3aed"/>
+              <ellipse cx="91" cy="114" rx="6" ry="7" fill="#1e1b4b"/>
+              <ellipse cx="129" cy="114" rx="6" ry="7" fill="#1e1b4b"/>
+              <circle cx="86" cy="108" r="4" fill="white"/>
+              <circle cx="124" cy="108" r="4" fill="white"/>
+              <circle cx="95" cy="116" r="2" fill="white" opacity="0.6"/>
+              <circle cx="133" cy="116" r="2" fill="white" opacity="0.6"/>
+              <path d="M 77 105 Q 91 100 105 105" stroke="#4c1d95" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M 115 105 Q 129 100 143 105" stroke="#4c1d95" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <line x1="77" y1="105" x2="73" y2="101" stroke="#4c1d95" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="105" y1="105" x2="109" y2="101" stroke="#4c1d95" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="115" y1="105" x2="111" y2="101" stroke="#4c1d95" stroke-width="1.8" stroke-linecap="round"/>
+              <line x1="143" y1="105" x2="147" y2="101" stroke="#4c1d95" stroke-width="1.8" stroke-linecap="round"/>
+              <ellipse cx="72" cy="123" rx="15" ry="8" fill="#fda4af" opacity="0.55"/>
+              <ellipse cx="148" cy="123" rx="15" ry="8" fill="#fda4af" opacity="0.55"/>
+              <circle cx="65" cy="121" r="2" fill="#fb7185" opacity="0.4"/>
+              <circle cx="155" cy="121" r="2" fill="#fb7185" opacity="0.4"/>
+              <path d="M 106 128 Q 110 133 114 128" stroke="#e8a090" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <path d="M 98 140 Q 110 151 122 140" stroke="#f472b6" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <text x="22" y="58" font-size="14" fill="#f472b6" opacity="0.7"></text>
+              <text x="178" y="72" font-size="10" fill="#fb923c" opacity="0.7"></text>
+              <text x="168" y="165" font-size="8" fill="#a78bfa" opacity="0.7"></text>
+              <text x="18" y="155" font-size="12" fill="#f9a8d4" opacity="0.7"></text>
+              <text x="168" y="45" font-size="9" fill="#fbbf24" opacity="0.9"></text>
+              <text x="28" y="200" font-size="8" fill="#fbbf24" opacity="0.8"></text>
+            </svg>
+          </div>
+
+          <p class="auth-tagline">Your world, beautifully secured</p>
+          <div class="dot-row">
+            <span class="dl active"></span><span class="dl"></span><span class="dl"></span>
+          </div>
+        </div>
+
+       
+        <div class="auth-right">
+          <div class="form-head">
+            <h1 class="form-title">Welcome back</h1>
+            <p class="form-sub">Sign in to continue your journey</p>
+          </div>
+
+          <form id="form-login" class="form" novalidate>
+            <div class="field">
+              <label for="login-username" class="label">Username</label>
+              <div class="input-box">
+                <span class="iico">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/></svg>
+                </span>
+                <input type="text" id="login-username" class="inp" placeholder="your_username" autocomplete="username" required />
+              </div>
+              <span class="ferr" id="err-login-username"></span>
+            </div>
+
+            <div class="field">
+              <label for="login-password" class="label">Password</label>
+              <div class="input-box">
+                <span class="iico">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
+                </span>
+                <input type="password" id="login-password" class="inp" placeholder="Password" autocomplete="current-password" required />
+                <button type="button" class="eye-btn" data-target="login-password" aria-label="Toggle password">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+                </button>
+              </div>
+              <span class="ferr" id="err-login-password"></span>
+            </div>
+
+            <button type="submit" class="btn btn-pink" id="btn-login">
+              <span class="btn-text">Sign In</span>
+              <span class="btn-loader" hidden><span class="d"></span><span class="d"></span><span class="d"></span></span>
+            </button>
+          </form>
+
+          <div class="auth-or"><span>or</span></div>
+          <p class="form-foot">No account yet? <button class="tlink" data-goto="register">Create one</button></p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+ <!-- Registration Section -->
+  <section id="screen-register" class="screen">
+    <div class="auth-wrapper">
+      <div class="auth-card">
+
+        <div class="auth-left peach-left">
+          <div class="auth-brand">
+            <span class="brand-name">sakura</span>
+          </div>
+
+          <div class="mascot-wrap">
+            <svg class="mascot-svg" viewBox="0 0 220 260" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="110" cy="205" rx="68" ry="18" fill="#fdba74" opacity="0.25"/>
+              <path d="M 72 178 Q 62 210 66 248 L 154 248 Q 158 210 148 178 Q 128 170 110 170 Q 92 170 72 178" fill="#fef3c7"/>
+              <path d="M 88 178 Q 110 186 132 178 L 129 195 Q 110 202 91 195 Z" fill="#fff" opacity="0.9"/>
+              <path d="M 101 186 Q 110 182 119 186 Q 110 191 101 186" fill="#fb923c"/>
+              <circle cx="110" cy="187" r="4" fill="#f97316"/>
+              <path d="M 74 185 Q 53 200 57 228 Q 61 236 68 232 Q 66 212 80 196" fill="#fde8d0"/>
+              <path d="M 146 185 Q 167 200 163 228 Q 159 236 152 232 Q 154 212 140 196" fill="#fde8d0"/>
+              <circle cx="57" cy="232" r="8" fill="#fde8d0"/>
+              <circle cx="163" cy="232" r="8" fill="#fde8d0"/>
+              <rect x="77" y="220" width="34" height="24" rx="3" fill="white" stroke="#fdba74" stroke-width="1.5"/>
+              <path d="M 77 220 L 94 233 L 111 220" stroke="#fbbf24" stroke-width="1.5" fill="none"/>
+              <ellipse cx="110" cy="100" rx="58" ry="65" fill="#f472b6"/>
+              <ellipse cx="59" cy="132" rx="18" ry="42" fill="#f472b6" transform="rotate(-6 59 132)"/>
+              <ellipse cx="161" cy="132" rx="18" ry="42" fill="#f472b6" transform="rotate(6 161 132)"/>
+              <ellipse cx="55" cy="170" rx="12" ry="18" fill="#ec4899" transform="rotate(-10 55 170)"/>
+              <ellipse cx="165" cy="170" rx="12" ry="18" fill="#ec4899" transform="rotate(10 165 170)"/>
+              <ellipse cx="110" cy="112" rx="50" ry="55" fill="#fde8d0"/>
+              <ellipse cx="60" cy="118" rx="10" ry="13" fill="#fde8d0"/>
+              <ellipse cx="160" cy="118" rx="10" ry="13" fill="#fde8d0"/>
+              <ellipse cx="60" cy="118" rx="6" ry="9" fill="#f9c4a8"/>
+              <ellipse cx="160" cy="118" rx="6" ry="9" fill="#f9c4a8"/>
+              <path d="M 64 88 Q 70 60 110 55 Q 150 60 156 88 Q 138 76 110 78 Q 82 76 64 88" fill="#f472b6"/>
+              <path d="M 64 88 Q 58 108 62 128 Q 55 115 58 98 Z" fill="#fb7185"/>
+              <path d="M 156 88 Q 162 108 158 128 Q 165 115 162 98 Z" fill="#fb7185"/>
+              <ellipse cx="90" cy="70" rx="12" ry="6" fill="#ffe4e6" opacity="0.75" transform="rotate(-25 90 70)"/>
+              <ellipse cx="91" cy="108" rx="14" ry="16" fill="white"/>
+              <ellipse cx="129" cy="108" rx="14" ry="16" fill="white"/>
+              <ellipse cx="93" cy="110" rx="10" ry="12" fill="#be185d"/>
+              <ellipse cx="131" cy="110" rx="10" ry="12" fill="#be185d"/>
+              <ellipse cx="94" cy="111" rx="6" ry="7" fill="#1e1b4b"/>
+              <ellipse cx="132" cy="111" rx="6" ry="7" fill="#1e1b4b"/>
+              <circle cx="88" cy="106" r="4" fill="white"/>
+              <circle cx="126" cy="106" r="4" fill="white"/>
+              <circle cx="96" cy="113" r="2" fill="white" opacity="0.6"/>
+              <circle cx="134" cy="113" r="2" fill="white" opacity="0.6"/>
+              <path d="M 77 103 Q 91 98 105 103" stroke="#9d174d" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M 115 103 Q 129 98 143 103" stroke="#9d174d" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <ellipse cx="72" cy="122" rx="17" ry="9" fill="#fda4af" opacity="0.6"/>
+              <ellipse cx="148" cy="122" rx="17" ry="9" fill="#fda4af" opacity="0.6"/>
+              <path d="M 106 128 Q 110 133 114 128" stroke="#e8a090" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+              <path d="M 96 138 Q 110 152 124 138" stroke="#f472b6" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <text x="18" y="62" font-size="14" fill="#fb923c" opacity="0.8"></text>
+              <text x="180" y="78" font-size="10" fill="#f472b6" opacity="0.7"></text>
+              <text x="170" y="158" font-size="9" fill="#fb923c" opacity="0.7"></text>
+              <text x="22" y="168" font-size="11" fill="#f9a8d4" opacity="0.7"></text>
+              <text x="168" y="45" font-size="10" fill="#fbbf24" opacity="0.9"></text>
+              <text x="25" y="200" font-size="8" fill="#fbbf24" opacity="0.8"></text>
+            </svg>
+          </div>
+
+          <p class="auth-tagline">Create your account</p>
+          <div class="dot-row">
+            <span class="dl"></span><span class="dl active"></span><span class="dl"></span>
+          </div>
+        </div>
+
+        <div class="auth-right">
+          <div class="form-head">
+            <h1 class="form-title">Create Account </h1>
+            <p class="form-sub">Create your account in a minute.</p>
+          </div>
+
+          <form id="form-register" class="form" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="reg-username" class="label">Username</label>
+                <div class="input-box">
+                  <span class="iico"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"/></svg></span>
+                  <input type="text" id="reg-username" class="inp" placeholder="doejohn" autocomplete="username" required />
+                </div>
+                <span class="ferr" id="err-reg-username"></span>
+              </div>
+
+              <div class="field">
+                <label for="reg-role" class="label">Role</label>
+                <div class="input-box select-box">
+                  <span class="iico"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg></span>
+                  <select id="reg-role" class="inp sel" required>
+                    <option value="USER">USER</option>
+                    <option value="ADMIN" selected>ADMIN</option>
+                  </select>
+                  <span class="chev">v</span>
+                </div>
+                <span class="ferr" id="err-reg-role"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="reg-email" class="label">Email address</label>
+              <div class="input-box">
+                <span class="iico"><svg viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg></span>
+                <input type="email" id="reg-email" class="inp" placeholder="you@example.com" autocomplete="email" required />
+              </div>
+              <span class="ferr" id="err-reg-email"></span>
+            </div>
+
+            <div class="field">
+              <label for="reg-password" class="label">Password</label>
+              <div class="input-box">
+                <span class="iico"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg></span>
+                <input type="password" id="reg-password" class="inp" placeholder="min. 8 characters" autocomplete="new-password" required />
+                <button type="button" class="eye-btn" data-target="reg-password" aria-label="Toggle password">
+                  <svg viewBox="0 0 20 20" fill="currentColor"><path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/><path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/></svg>
+                </button>
+              </div>
+              <span class="ferr" id="err-reg-password"></span>
+            </div>
+
+            <button type="submit" class="btn btn-peach" id="btn-register">
+              <span class="btn-text">Create Account</span>
+              <span class="btn-loader" hidden><span class="d"></span><span class="d"></span><span class="d"></span></span>
+            </button>
+          </form>
+
+          <div class="auth-or"><span>or</span></div>
+          <p class="form-foot">Already registered? <button class="tlink" data-goto="login">Sign in</button></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="screen-dashboard" class="screen">
+    <div class="profile-page">
+
+      <!-- NAV -->
+      <nav class="profile-nav">
+        <div class="auth-brand nav-brand">
+          <span class="brand-name">Account</span>
+        </div>
+        <div class="nav-right">
+          <span class="nav-handle" id="nav-username-badge">@user</span>
+          <button class="btn btn-danger-soft" id="btn-logout">
+            <span class="btn-text">
+              <svg viewBox="0 0 20 20" fill="currentColor" width="14" height="14" style="vertical-align:-2px;margin-right:4px"><path fill-rule="evenodd" d="M3 3a1 1 0 011 1v12a1 1 0 11-2 0V4a1 1 0 011-1zm7.707 3.293a1 1 0 010 1.414L9.414 9H17a1 1 0 110 2H9.414l1.293 1.293a1 1 0 01-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Logout
+            </span>
+            <span class="btn-loader" hidden><span class="d"></span><span class="d"></span><span class="d"></span></span>
+          </button>
+        </div>
+      </nav>
+
+      <div class="profile-container">
+
+    
+        <div id="profile-loading">
+          <div class="skel-body-row">
+            <div class="skel-card minimal">
+              <div class="skel-avatar"></div>
+              <div class="skel-lines">
+                <div class="skel-line w35"></div>
+                <div class="skel-line w45"></div>
+              </div>
+              <div class="skel-line w90"></div>
+              <div class="skel-line w80"></div>
+              <div class="skel-line w75"></div>
+              <div class="skel-line w70"></div>
+            </div>
+          </div>
+        </div>
+
+      
+        <div id="profile-content" hidden>
+          <div class="profile-body">
+            <div class="info-card">
+              <div class="profile-top minimal">
+                <div class="avatar-area">
+                  <div class="avatar-ring">
+                    <img id="profile-avatar-img" src="" alt="avatar" class="avatar-img" />
+                  </div>
+                </div>
+                <div class="profile-identity">
+                  <div class="identity-first-row">
+                    <h2 class="pname" id="profile-name">Loading...</h2>
+                    <span class="role-pill" id="profile-role-badge">USER</span>
+                  </div>
+                  <p class="phandle" id="profile-username">@-</p>
+                  <div class="pmeta">
+                    <span id="pmeta-email">-</span>
+                    <span id="pmeta-joined">-</span>
+                  </div>
+                </div>
+                <span class="verified-pill" id="verified-badge" hidden>Verified</span>
+              </div>
+              <div class="info-list">
+                <div class="irow">
+                  <span class="ilabel">Email</span>
+                  <span class="ivalue" id="detail-email">-</span>
+                </div>
+                <div class="irow">
+                  <span class="ilabel">Username</span>
+                  <span class="ivalue" id="detail-username">-</span>
+                </div>
+                <div class="irow">
+                  <span class="ilabel">Role</span>
+                  <span class="ivalue"><span class="role-pill sm" id="detail-role">-</span></span>
+                </div>
+                <div class="irow">
+                  <span class="ilabel">Login Method</span>
+                  <span class="ivalue" id="detail-login-type">-</span>
+                </div>
+                <div class="irow">
+                  <span class="ilabel">Member Since</span>
+                  <span class="ivalue" id="detail-created">-</span>
+                </div>
+                <div class="irow">
+                  <span class="ilabel">Last Updated</span>
+                  <span class="ivalue" id="detail-updated">-</span>
+                </div>
+                <div class="irow">
+                  <span class="ilabel">User ID</span>
+                  <span class="ivalue idval" id="detail-id">-</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
